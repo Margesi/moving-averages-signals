@@ -7,11 +7,11 @@ library(formattable)
 library(psych)
 
 options(qwraps2_markup = "markdown")
-daydata_ETH <- read_csv("Downloads/daydata_ETH.csv")
-daydata_DOGE<- read_csv("Downloads/daydata_DOGE.csv")
-daydata_BTC<- read_csv("Downloads/daydata_BTC.csv")
-daydata_XLM<- read_csv("Downloads/daydata_XLM.csv")
-daydata_XRP<- read_csv("Downloads/daydata_XRP.csv")
+daydata_ETH <- read_csv("daydata_ETH.csv")
+daydata_DOGE<- read_csv("daydata_DOGE.csv")
+daydata_BTC<- read_csv("daydata_BTC.csv")
+daydata_XLM<- read_csv("daydata_XLM.csv")
+daydata_XRP<- read_csv("daydata_XRP.csv")
 
 
 
@@ -74,7 +74,7 @@ for (i in 20:length(mov20$close.BTC)) {
 signalsBTC<-data_frame(datebuyBTC,buypricevectorBTC,nBTCbought,datesellBTC,sellpricevectorBTC,USD100invBTC,vectorBTCearning)
 avgBTCearning20<-mean(vectorBTCearning)
 mean(signalsBTC$USD100invBTC)
-
+signalsBTC$accumearnings<- cumsum(signalsBTC$USD100invBTC)
 describe(signalsBTC)
 
 #BTC 50 Day moving average
@@ -197,7 +197,7 @@ describe(signalsBTC50[-1])
       } else {
         ncryptobought50<-USDvalue/Prices$close.ETH[i]
       }
-      nETHbought50<-append(nETHbought50,ncryptobought)
+      nETHbought50<-append(nETHbought50,ncryptobought50)
     }
     
     if(buy) {
