@@ -99,7 +99,7 @@ for (i in 50:length(mov50$close.BTC)) {
     } else {
       ncryptobought50<-USDvalue/Prices$close.BTC[i]
     }
-    nBTCbought50<-append(nBTCbought50,ncryptobought)
+    nBTCbought50<-append(nBTCbought50,ncryptobought50)
   }
   
   if(buy) {
@@ -294,7 +294,7 @@ describe(signalsBTC50[-1])
       } else {
         ncryptobought50<-USDvalue/Prices$close.DOGE[i]
       }
-      nDOGEbought50<-append(nDOGEbought50,ncryptobought)
+      nDOGEbought50<-append(nDOGEbought50,ncryptobought50)
     }
     
     if(buy) {
@@ -385,7 +385,7 @@ describe(signalsBTC50[-1])
       } else {
         ncryptobought50<-USDvalue/Prices$close.XRP[i]
       }
-      nXRPbought50<-append(nXRPbought50,ncryptobought)
+      nXRPbought50<-append(nXRPbought50,ncryptobought50)
     }
     
     if(buy) {
